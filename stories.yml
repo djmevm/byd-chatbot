@@ -1,0 +1,64 @@
+version: "3.1"
+
+stories:
+  - story: saludo y catalogo
+    steps:
+      - intent: saludar
+      - action: utter_saludar
+      - intent: consultar_catalogo
+      - action: utter_catalogo
+
+  - story: consulta de precio directo
+    steps:
+      - intent: saludar
+      - action: utter_saludar
+      - intent: consultar_precio
+      - action: action_info_modelo
+
+  - story: flujo de compra completo
+    steps:
+      - intent: saludar
+      - action: utter_saludar
+      - intent: consultar_catalogo
+      - action: utter_catalogo
+      - intent: pedir_informacion_modelo
+      - action: action_info_modelo
+      - intent: consultar_financiamiento
+      - action: action_calcular_financiamiento
+      - intent: agendar_prueba_manejo
+      - action: utter_agendar_prueba
+      - intent: confirmar
+      - action: action_guardar_lead
+      - action: utter_confirmar_cita
+
+  - story: negociacion de precio
+    steps:
+      - intent: saludar
+      - action: utter_saludar
+      - intent: hacer_oferta
+      - action: utter_oferta_recibida
+      - intent: confirmar
+      - action: action_guardar_lead
+
+  - story: prueba de manejo directa
+    steps:
+      - intent: agendar_prueba_manejo
+      - action: utter_agendar_prueba
+      - intent: confirmar
+      - action: action_guardar_lead
+      - action: utter_confirmar_cita
+
+  - story: consulta financiamiento
+    steps:
+      - intent: consultar_financiamiento
+      - action: action_calcular_financiamiento
+
+  - story: despedida
+    steps:
+      - intent: despedirse
+      - action: utter_despedirse
+
+  - story: fuera de tema
+    steps:
+      - intent: fuera_de_tema
+      - action: utter_fuera_de_tema

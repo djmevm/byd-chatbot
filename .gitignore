@@ -1,0 +1,9 @@
+models/
+.rasa/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.log
+results/

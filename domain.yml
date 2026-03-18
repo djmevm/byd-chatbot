@@ -1,0 +1,120 @@
+version: "3.1"
+
+intents:
+  - saludar
+  - despedirse
+  - consultar_catalogo
+  - consultar_precio
+  - agendar_prueba_manejo
+  - consultar_financiamiento
+  - hacer_oferta
+  - consultar_disponibilidad
+  - pedir_informacion_modelo
+  - confirmar
+  - negar
+  - fuera_de_tema
+
+entities:
+  - modelo_auto
+  - presupuesto
+  - nombre_cliente
+  - telefono
+  - fecha
+
+slots:
+  modelo_auto:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: modelo_auto
+  presupuesto:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: presupuesto
+  nombre_cliente:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: nombre_cliente
+  telefono:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: telefono
+  fecha_prueba:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: fecha
+
+responses:
+  utter_saludar:
+    - text: "¡Bienvenido al Concesionario BYD! 🚗 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy? Puedo informarte sobre nuestros modelos, precios, financiamiento o agendar una prueba de manejo."
+
+  utter_despedirse:
+    - text: "¡Gracias por visitar Concesionario BYD! Fue un placer atenderte. Si tienes más preguntas, no dudes en volver. ¡Hasta pronto! 👋"
+
+  utter_catalogo:
+    - text: |
+        🚗 Nuestro catálogo BYD disponible:
+
+        **Sedanes:**
+        • BYD Seal – Desde $35,000 USD (eléctrico)
+        • BYD Han – Desde $45,000 USD (eléctrico premium)
+
+        **SUVs:**
+        • BYD Atto 3 – Desde $30,000 USD (eléctrico)
+        • BYD Tang – Desde $50,000 USD (eléctrico 7 plazas)
+        • BYD Song Plus – Desde $28,000 USD (híbrido/eléctrico)
+
+        **Compactos:**
+        • BYD Dolphin – Desde $22,000 USD (eléctrico)
+        • BYD Seagull – Desde $15,000 USD (eléctrico urbano)
+
+        ¿Te interesa algún modelo en particular?
+
+  utter_preguntar_modelo:
+    - text: "¿Sobre qué modelo BYD te gustaría más información? Tenemos Seal, Han, Atto 3, Tang, Song Plus, Dolphin y Seagull."
+
+  utter_preguntar_presupuesto:
+    - text: "Para ayudarte mejor, ¿cuál es tu presupuesto aproximado? Así te recomiendo el modelo ideal para ti."
+
+  utter_financiamiento:
+    - text: |
+        💳 Opciones de financiamiento en Concesionario BYD:
+
+        • **Contado:** Descuento especial del 5%
+        • **Crédito directo:** Hasta 60 meses, tasa desde 8% anual
+        • **Enganche mínimo:** 20% del valor del vehículo
+        • **Crédito bancario:** Trabajamos con los principales bancos
+        • **Leasing:** Disponible para empresas
+
+        ¿Te gustaría que un asesor te contacte para personalizar tu plan?
+
+  utter_agendar_prueba:
+    - text: "¡Genial! Me alegra que quieras probar un BYD. ¿Cuál es tu nombre y número de teléfono para agendar tu prueba de manejo?"
+
+  utter_confirmar_cita:
+    - text: "✅ ¡Perfecto, {nombre_cliente}! Tu prueba de manejo del {modelo_auto} ha sido agendada. Un asesor te contactará al {telefono} para confirmar la fecha. ¡Te va a encantar!"
+
+  utter_oferta_recibida:
+    - text: "Entiendo tu propuesta de {presupuesto}. Déjame verificar si podemos hacer algo especial para ti. ¿Me das tu nombre y teléfono para que un asesor te contacte con una oferta personalizada?"
+
+  utter_fuera_de_tema:
+    - text: "Soy el asistente del Concesionario BYD, solo puedo ayudarte con información sobre nuestros vehículos, precios y servicios. ¿Hay algo relacionado con nuestros autos en lo que pueda ayudarte?"
+
+  utter_pedir_nombre:
+    - text: "¿Cuál es tu nombre para personalizar la atención?"
+
+  utter_disponibilidad:
+    - text: "Todos nuestros modelos están disponibles en stock. Para confirmar unidades específicas o colores, te recomiendo visitar nuestra sala de ventas o dejar tus datos para que un asesor te confirme. ¿Te interesa?"
+
+actions:
+  - action_info_modelo
+  - action_calcular_financiamiento
+  - action_guardar_lead
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

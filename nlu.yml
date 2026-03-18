@@ -1,0 +1,202 @@
+version: "3.1"
+
+nlu:
+  - intent: saludar
+    examples: |
+      - hola
+      - buenos días
+      - buenas tardes
+      - buenas noches
+      - hey
+      - qué tal
+      - hola, buenas
+      - buen día
+      - hi
+      - hello
+      - saludos
+      - ¿me pueden ayudar?
+      - necesito ayuda
+      - quiero información
+
+  - intent: despedirse
+    examples: |
+      - adiós
+      - hasta luego
+      - chao
+      - bye
+      - nos vemos
+      - hasta pronto
+      - gracias, hasta luego
+      - me voy
+      - eso era todo
+      - muchas gracias por todo
+
+  - intent: consultar_catalogo
+    examples: |
+      - ¿qué autos tienen?
+      - muéstrame el catálogo
+      - ¿qué modelos BYD tienen disponibles?
+      - ¿cuáles son sus vehículos?
+      - quiero ver los autos
+      - ¿qué carros venden?
+      - catálogo de autos
+      - ¿tienen SUVs?
+      - ¿qué eléctricos tienen?
+      - muéstrame los modelos
+      - ¿qué vehículos eléctricos manejan?
+      - lista de autos disponibles
+
+  - intent: consultar_precio
+    examples: |
+      - ¿cuánto cuesta el [BYD Seal](modelo_auto)?
+      - ¿cuál es el precio del [Dolphin](modelo_auto)?
+      - ¿cuánto vale el [Atto 3](modelo_auto)?
+      - precio del [Han](modelo_auto)
+      - ¿cuánto sale el [Tang](modelo_auto)?
+      - ¿qué precio tiene el [Song Plus](modelo_auto)?
+      - ¿cuánto cuesta el [Seagull](modelo_auto)?
+      - precio del [BYD Dolphin](modelo_auto)
+      - precio del [BYD Seal](modelo_auto)
+      - precio del [BYD Han](modelo_auto)
+      - ¿cuánto cuesta el [BYD Atto 3](modelo_auto)?
+      - ¿cuánto vale el [BYD Tang](modelo_auto)?
+      - precio [BYD Seagull](modelo_auto)
+      - precio [BYD Song Plus](modelo_auto)
+      - quiero saber el precio
+      - ¿cuánto cuesta?
+      - ¿cuál es el valor?
+      - precios de los autos
+      - ¿cuánto me sale un BYD?
+      - ¿tienen autos baratos?
+      - ¿cuál es el más económico?
+
+  - intent: agendar_prueba_manejo
+    examples: |
+      - quiero hacer una prueba de manejo
+      - ¿puedo probar el auto?
+      - me gustaría manejar el [Seal](modelo_auto)
+      - quiero probar el [Dolphin](modelo_auto)
+      - ¿puedo agendar un test drive?
+      - test drive del [Atto 3](modelo_auto)
+      - quiero manejar un BYD
+      - ¿cómo agendo una prueba?
+      - quiero sentir el auto antes de comprarlo
+      - ¿puedo ir a probar el carro?
+
+  - intent: consultar_financiamiento
+    examples: |
+      - ¿tienen financiamiento?
+      - ¿cómo puedo pagar a plazos?
+      - ¿qué opciones de crédito tienen?
+      - quiero pagar en cuotas
+      - ¿cuánto sería la mensualidad?
+      - ¿aceptan crédito?
+      - ¿trabajan con bancos?
+      - opciones de pago
+      - ¿puedo financiar el auto?
+      - ¿cuál es la tasa de interés?
+      - ¿cuánto de enganche necesito?
+      - quiero crédito para el auto
+      - quiero financiamiento
+      - financiamiento
+      - cuotas
+      - pagar a plazos
+      - crédito para el [BYD Seal](modelo_auto)
+      - financiar el [Dolphin](modelo_auto)
+      - ¿cuánto pago al mes por el [Han](modelo_auto)?
+
+  - intent: hacer_oferta
+    examples: |
+      - tengo [20000 dólares](presupuesto) de presupuesto
+      - puedo pagar [25000](presupuesto)
+      - mi presupuesto es de [$30,000](presupuesto)
+      - ¿me pueden dar un descuento?
+      - ¿hay alguna oferta?
+      - quiero negociar el precio
+      - ¿pueden bajar el precio?
+      - tengo [15000 USD](presupuesto) disponibles
+      - ¿qué me pueden ofrecer por [18000](presupuesto)?
+      - ¿tienen promociones?
+      - quiero el mejor precio posible
+
+  - intent: consultar_disponibilidad
+    examples: |
+      - ¿tienen el [Seal](modelo_auto) en stock?
+      - ¿está disponible el [Dolphin](modelo_auto)?
+      - ¿cuándo llega el [Tang](modelo_auto)?
+      - ¿tienen en color blanco?
+      - ¿hay unidades disponibles?
+      - ¿cuánto tiempo de entrega?
+      - ¿lo tienen en azul?
+      - disponibilidad del [Atto 3](modelo_auto)
+
+  - intent: pedir_informacion_modelo
+    examples: |
+      - cuéntame más del [BYD Seal](modelo_auto)
+      - información del [Dolphin](modelo_auto)
+      - ¿qué características tiene el [Han](modelo_auto)?
+      - especificaciones del [Atto 3](modelo_auto)
+      - ¿cuánta autonomía tiene el [Tang](modelo_auto)?
+      - ¿qué motor tiene el [Song Plus](modelo_auto)?
+      - ficha técnica del [Seagull](modelo_auto)
+      - [BYD Seal](modelo_auto)
+      - [Seal](modelo_auto)
+      - [Dolphin](modelo_auto)
+      - [Han](modelo_auto)
+      - [Atto 3](modelo_auto)
+      - [Tang](modelo_auto)
+      - [Song Plus](modelo_auto)
+      - [Seagull](modelo_auto)
+      - [BYD Dolphin](modelo_auto)
+      - [BYD Han](modelo_auto)
+      - [BYD Tang](modelo_auto)
+      - [BYD Atto 3](modelo_auto)
+      - [BYD Song Plus](modelo_auto)
+      - [BYD Seagull](modelo_auto)
+      - el [BYD Seal](modelo_auto)
+      - el [BYD Dolphin](modelo_auto)
+      - el [Dolphin](modelo_auto)
+      - el [Han](modelo_auto)
+      - el [Seal](modelo_auto)
+      - me interesa el [BYD Dolphin](modelo_auto)
+      - quiero info del [BYD Seal](modelo_auto)
+      - dime más sobre el [BYD Han](modelo_auto)
+      - ¿cuántos km hace con una carga?
+      - ¿qué tecnología incluye?
+      - ¿tiene carga rápida?
+
+  - intent: confirmar
+    examples: |
+      - sí
+      - claro
+      - por supuesto
+      - de acuerdo
+      - ok
+      - está bien
+      - perfecto
+      - me interesa
+      - adelante
+      - sí, quiero
+      - correcto
+      - exacto
+
+  - intent: negar
+    examples: |
+      - no
+      - no gracias
+      - no me interesa
+      - tal vez después
+      - lo voy a pensar
+      - no por ahora
+      - negativo
+      - paso
+
+  - intent: fuera_de_tema
+    examples: |
+      - ¿cómo está el clima?
+      - ¿quién ganó el partido?
+      - cuéntame un chiste
+      - ¿qué hora es?
+      - ¿puedes ayudarme con otra cosa?
+      - necesito un médico
+      - ¿dónde queda el banco?

@@ -1,0 +1,52 @@
+version: "3.1"
+
+rules:
+  - rule: responder saludo siempre
+    steps:
+      - intent: saludar
+      - action: utter_saludar
+
+  - rule: responder despedida siempre
+    steps:
+      - intent: despedirse
+      - action: utter_despedirse
+
+  - rule: responder fuera de tema
+    steps:
+      - intent: fuera_de_tema
+      - action: utter_fuera_de_tema
+
+  - rule: mostrar catalogo
+    steps:
+      - intent: consultar_catalogo
+      - action: utter_catalogo
+
+  - rule: mostrar disponibilidad
+    steps:
+      - intent: consultar_disponibilidad
+      - action: utter_disponibilidad
+
+  - rule: consultar precio de modelo
+    steps:
+      - intent: consultar_precio
+      - action: action_info_modelo
+
+  - rule: pedir informacion de modelo
+    steps:
+      - intent: pedir_informacion_modelo
+      - action: action_info_modelo
+
+  - rule: consultar financiamiento
+    steps:
+      - intent: consultar_financiamiento
+      - action: action_calcular_financiamiento
+
+  - rule: hacer oferta
+    steps:
+      - intent: hacer_oferta
+      - action: utter_oferta_recibida
+
+  - rule: agendar prueba de manejo
+    steps:
+      - intent: agendar_prueba_manejo
+      - action: utter_agendar_prueba

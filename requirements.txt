@@ -1,0 +1,5 @@
+rasa==3.6.15
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.23.0
+SQLAlchemy==1.4.54
+setuptools==69.5.1

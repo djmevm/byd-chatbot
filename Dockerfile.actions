@@ -1,0 +1,18 @@
+FROM rasa/rasa-sdk:3.6.2
+
+WORKDIR /app
+
+USER root
+
+RUN pip install --no-cache-dir \
+    fuzzywuzzy==0.18.0 \
+    python-Levenshtein==0.23.0
+
+COPY --chown=1001:1001 actions/ ./actions/
+
+USER 1001
+
+EXPOSE 5055
+
+ENTRYPOINT []
+CMD ["sh", "-c", "rasa run actions --port ${PORT:-5055}"]
